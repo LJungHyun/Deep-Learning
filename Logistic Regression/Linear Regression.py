@@ -34,7 +34,7 @@ accruracy = tf.reduce_mean(tf.cast(tf.equal(predicted, Y), dtype = tf.float32))
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
-for step in range(1001):
+for step in range(1000001):
     cost_val, hy_val, _ = sess.run([cost, hypothesis, train], feed_dict={X: x_data, Y: y_data})
     if step % 10 == 0:
         print(step, "Cost : ", cost_val, "\n Prediction : \n", hy_val)
